@@ -16,7 +16,7 @@
 // write your code here
 
 
-
+var cart: [String] = ["Chips", "Salsa", "Guacamole", "Red wine"]
 
 
 
@@ -25,7 +25,7 @@
  */
 // write your code here
 
-
+var numbers: [Int] = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
 
 
 
@@ -37,7 +37,9 @@
 // write your code here
 
 
-
+for number in numbers {
+    print(number)
+}
 
 
 
@@ -48,7 +50,9 @@
 // write your code here
 
 
-
+for item in cart {
+    print("I need to grab some \(item) from the supermarket!")
+}
 
 
 
@@ -58,11 +62,13 @@
  */
 // write your code here
 
+func printCart(item: String) {
+    print(item)
+}
 
-
-
-
-
+for item in cart {
+    print(item)
+    }
 
 /*: question6
  ### 4. Create a function that takes an array of names and greets each person with the following message "Good morning x" <- x being the individuals name. One caveat. If the persons first name is Michael, we want to greet them with the message, "Top of the morning Michael!".
@@ -70,9 +76,18 @@
 // write your code here
 
 
+let names = ["Michael", "Jordan", "Richel", "Marcy", "Spencer", "Taylor"]
 
+func greetsPerson(names: [String]) {
+    for name in names {
+        print("Good morning \(name)")
+        if name == "Michael" {
+            print("Top of the morning \(name)!")
+        }
+    }
+}
 
-
+greetsPerson(names)
 
 /*: question7
  ### 7. Create a function that takes an array of Ints (40, 60, 50, 52, 59, 13, 90, 100, 5, 52, 51, 49) and returns an array of Ints. This function should look through the array of Ints and create a new array of Ints that only contain integers less than 50.
@@ -80,9 +95,17 @@
 // write your code here
 
 
+let scores = [40, 60, 50, 52, 59, 13, 90, 100, 5, 52, 51, 49]
 
+func scoresLessThan50(scores: [Int]) -> [Int] {
+    var scoresLessThan50: [Int] = []
+    
+    for score in scores {
+        if score <= 50 {
+            scoresLessThan50.append(score)
+        }
+    }
+    return scoresLessThan50
+}
 
-
-
-
-
+var finalScores = scoresLessThan50(scores)
